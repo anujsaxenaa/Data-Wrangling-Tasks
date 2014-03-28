@@ -4,22 +4,20 @@ __author__ = 'Anuj'
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('data2.csv')
-print df
-# dfff = pd.read_csv('data2.csv')
-# print "XXX"
-# print dfff
+df = pd.read_csv('data.csv')
+
+
 a = list(df.columns.values)
 new_col = []
 
 for colname in a:
     new_col.append(colname.replace(' ', ''))
-#print new_col
+
 
 df.columns = new_col
-#print df.shape
 
-mark = pd.read_csv('Market2.csv')
+
+mark = pd.read_csv('Market.csv')
 
 new_df2 = pd.DataFrame(np.random.randint(4, size=(3*mark.shape[0]*df.shape[0])))
 
@@ -61,7 +59,7 @@ new_df2['Market'] = regions2
 new_date = []
 
 # reading dates
-df_date = pd.read_csv('dates2.csv')
+df_date = pd.read_csv('dates.csv')
 new_df2['Date'] = list(df_date['Date'])*(mark.shape[0]*len(cc))
 
 new_df2 = new_df2.reindex(columns=['Date', 'Company', 'Market', 'StatCaseVolume', 'StatCaseBaseVolume', "StatCaseInc'lVolume",
