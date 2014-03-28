@@ -69,4 +69,4 @@ new_df2 = new_df2.reindex(columns=['Date', 'Company', 'Market', 'StatCaseVolume'
                       '%BaseVolume,AnyMerch', '%BaseVolume,Feature&/orDisplay', '%BaseVolume,PrcRedOnly',
                       'MarkdownDollars'])
 print new_df2.shape
-new_df2.to_csv('new_df2.csv', sep=',')
+new_df2.to_csv('new_data.csv', sep=',')
